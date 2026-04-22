@@ -1,0 +1,20 @@
+<nav class="bg-white shadow-lg fixed top-0 w-full z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+      <div class="flex items-center">
+        <a href="/" class="text-2xl font-bold text-gray-800">MyApp</a>
+      </div>
+      <div class="flex items-center space-x-4">
+        <% if (isLoggedIn) { %>
+          <a href="/profile" class="text-gray-700 hover:text-blue-500 font-medium">Profile</a>
+          <form action="/logout" method="POST" class="inline">
+            <button type="submit" class="text-gray-700 hover:text-red-500 font-medium">Logout</button>
+          </form>
+        <% } else { %>
+          <a href="/login" class="text-gray-700 hover:text-blue-500 font-medium">Login</a>
+          <a href="/signup" class="text-gray-700 hover:text-blue-500 font-medium">Signup</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
